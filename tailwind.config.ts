@@ -54,8 +54,8 @@ export default {
         xs: "420px",
       },
       fontFamily: {
-        inter: ["var(--font-inter)"],
-        "space-grotesk": ["var(--font-space-grotesk)"],
+        inter: ["var(--font-inter)", "sans-serif"],
+        "space-grotesk": ["var(--font-space-grotesk)", "sans-serif"],
       },
     },
   },
