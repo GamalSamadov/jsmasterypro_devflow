@@ -9,18 +9,12 @@ import { Badge } from "../ui/badge";
 interface Props {
   _id: string;
   name: string;
-  questions: number;
+  questions?: number;
   showCount?: boolean;
   compact?: boolean;
 }
 
-export const TagCard = ({
-  _id,
-  name,
-  questions,
-  showCount,
-  compact,
-}: Props) => {
+export const TagCard = ({ _id, name, questions, showCount }: Props) => {
   const iconClass = getDeviconClassName(name);
 
   return (
