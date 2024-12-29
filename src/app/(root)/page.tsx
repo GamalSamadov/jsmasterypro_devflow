@@ -4,7 +4,7 @@ const Home = async () => {
   const session = await auth();
 
   console.log(session);
-  return <></>;
+  return <>Home</>;
 };
 
 export default Home;
