@@ -5,6 +5,8 @@ import HomeFilter from "@/components/filters/HomeFilter";
 import LocalSearch from "@/components/search/LocalSearch";
 import { Button } from "@/components/ui/button";
 import ROUTES from "@/constants/routes";
+import handleError from "@/lib/handlers/error";
+import { ValidationError } from "@/lib/http-errors";
 
 const questions = [
   {
@@ -51,6 +53,17 @@ interface SearchParams {
   searchParams: Promise<{ [key: string]: string }>;
 }
 
+const test = async () => {
+  try {
+    throw new ValidationError({
+      title: ["Required"],
+      tags: ['"JavaScript" is not a valid tag.'],
+    });
+  } catch (error) {
+    return handleError(error);
+  }
+};
+
 const Home = async ({ searchParams }: SearchParams) => {
   const { query = "", filter = "" } = await searchParams;
 
@@ -63,6 +76,8 @@ const Home = async ({ searchParams }: SearchParams) => {
       : true;
     return matchesQuery && matchesFilter;
   });
+
+  await test();
 
   return (
     <>
