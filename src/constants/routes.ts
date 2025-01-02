@@ -5,8 +5,11 @@ const ROUTES = {
   SIGN_IN_WITH_OAUTH: `signin-with-oauth`,
   ASK_QUESTION: "/ask-question",
   QUESTION: (id: string) => `/questions/${id}`,
+  COLLECTION: "/collection",
+  COMMUNITY: "/community",
+  TAG: (id: string) => `/tags/${id}`,
+  JOBS: "/jobs",
   PROFILE: (id: string) => `/profile/${id}`,
-  TAGS: (id: string) => `/tags/${id}`,
 };
 
 export default ROUTES;
